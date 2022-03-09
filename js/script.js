@@ -60,17 +60,23 @@ const team = [
   console.log(team[5].role);
   console.log(team[5].image);
 
-  member(team[0].name, team[0].role, team[0].image);
-  member(team[1].name, team[1].role, team[1].image);
-  member(team[2].name, team[2].role, team[2].image);
-  member(team[3].name, team[3].role, team[3].image);
-  member(team[4].name, team[4].role, team[4].image);
-  member(team[5].name, team[5].role, team[5].image);
 
-function member(name, role, image) {
+  member(team[0].image, team[0].name, team[0].role, team[0].image);
+  member(team[1].image, team[1].name, team[1].role, team[1].image);
+  member(team[2].image, team[2].name, team[2].role, team[2].image);
+  member(team[3].image, team[3].name, team[3].role, team[3].image);
+  member(team[4].image, team[4].name, team[4].role, team[4].image);
+  member(team[5].image, team[5].name, team[5].role, team[5].image);
+
+function member(img, name, role, image) {
     const card = document.createElement('div');
     document.getElementById('row').appendChild(card);
     card.classList.add('col-4');
+
+    const photo = document.createElement('img');
+    card.appendChild(photo);
+    photo.classList.add('img-fluid', 'mb-2');
+    photo.src = `img/${img}`;
 
     const titleName = document.createElement('h4');
     card.appendChild(titleName);
@@ -110,4 +116,4 @@ function member(name, role, image) {
 };
 
 const myRow = document.getElementById('row');
-myRow.classList.add('gy-5', 'pt-4');
+myRow.classList.add('gy-5', 'py-4');
